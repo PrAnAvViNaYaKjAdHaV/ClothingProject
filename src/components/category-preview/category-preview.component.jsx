@@ -1,7 +1,5 @@
 import ProductCard from "../product-card/product-card.component";
-import { useSelector } from "react-redux";
-import Spinner from "../spinner/spinner.component";
-import { selectCategoriesIsLoading } from "../../store/categories/category.selector";
+
 import {
   CategoryPreviewContainer,
   Title,
@@ -9,10 +7,7 @@ import {
 } from "./category-preview.styles";
 
 const CategoryPreview = ({ title, products }) => {
-  const isLoading = useSelector(selectCategoriesIsLoading);
-  return isLoading ? (
-    <Spinner />
-  ) : (
+  return (
     <CategoryPreviewContainer>
       <h2>
         <Title to={title}>{title.toUpperCase()}</Title>
